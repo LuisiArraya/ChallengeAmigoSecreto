@@ -16,6 +16,15 @@ function agregarAmigo(){
         alert(`Por favor, Escribe un nombre`);
         return;
     }
+    //Funcion visualizar lista// 
+    function mostrarListaAmigos() {
+        let listaAmigos = document.getElementById('listaAmigos');
+        listaAmigos.innerHTML = '';
+        for (let i = 0; i < NomSorteados.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = NomSorteados[i];
+            listaAmigos.appendChild(li);
+        }
     // Limpiar el resultado del sorteo si ya se ha realizado
     let resultado = document.getElementById('resultado');
     if (resultado.innerHTML !== '') {
