@@ -25,6 +25,21 @@ function agregarAmigo(){
             li.textContent = NomSorteados[i];
             listaAmigos.appendChild(li);
         }
+    }
+    function sortearAmigo() {
+        if (NomSorteados.length === 0) {
+            alert('NO hay nombres que sortear');
+            return;
+        }
+        if (NomSorteados.length < 3) {
+            alert('Por favor, ingrese al menos 3 nombres');
+            return;
+        }
+        let listaSorteada = NomSorteados[Math.floor(Math.random() * NomSorteados.length)];
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = `El amigo secreto es: ${listaSorteada}`;
+        limpiarLista();
+    }
     // Limpiar el resultado del sorteo si ya se ha realizado
     let resultado = document.getElementById('resultado');
     if (resultado.innerHTML !== '') {
